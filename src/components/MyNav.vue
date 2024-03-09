@@ -50,55 +50,57 @@ function closeProduct() {
       </div>
       <button class="btn">联系我们</button>
     </div>
-    <div class="popup-box product" ref="product" @mouseenter="showProduct" @mouseleave="closeProduct">
-      <div class="item-box">
-        <div class="item">
-          <a href="javascript:" class="title">办赛组织</a>
-          <div class="other-box"></div>
-          <div class="info" v-for="item in match">
-            <div class="name">{{ item }}</div>
+    <div class="product" ref="product">
+      <div class="popup-box" @mouseenter="showProduct" @mouseleave="closeProduct">
+        <div class="item-box">
+          <div class="item">
+            <a href="javascript:" class="title">办赛组织</a>
+            <div class="other-box"></div>
+            <div class="info" v-for="item in match">
+              <div class="name">{{ item }}</div>
+            </div>
           </div>
-        </div>
-        <div class="item">
-          <a href="javascript:" class="title">俱乐部管理</a>
-          <div class="other-box"></div>
-          <div class="info" v-for="item in club">
-            <div class="name">{{ item }}</div>
+          <div class="item">
+            <a href="javascript:" class="title">俱乐部管理</a>
+            <div class="other-box"></div>
+            <div class="info" v-for="item in club">
+              <div class="name">{{ item }}</div>
+            </div>
           </div>
-        </div>
-        <div class="item">
-          <a href="javascript:" class="title">直播集锦</a>
-          <div class="other-box"></div>
-          <div class="info" v-for="item in live">
-            <div class="name">{{ item }}</div>
+          <div class="item">
+            <a href="javascript:" class="title">直播集锦</a>
+            <div class="other-box"></div>
+            <div class="info" v-for="item in live">
+              <div class="name">{{ item }}</div>
+            </div>
           </div>
-        </div>
-        <div class="item">
-          <a href="javascript:" class="title">保险保障</a>
-          <div class="other-box"></div>
-          <div class="info" v-for="item in insure">
-            <div class="name">{{ item }}</div>
+          <div class="item">
+            <a href="javascript:" class="title">保险保障</a>
+            <div class="other-box"></div>
+            <div class="info" v-for="item in insure">
+              <div class="name">{{ item }}</div>
+            </div>
           </div>
-        </div>
-        <div class="item">
-          <a href="javascript:" class="title">体培招生</a>
-          <div class="other-box"></div>
-          <div class="info" v-for="item in teach">
-            <div class="name">{{ item }}</div>
+          <div class="item">
+            <a href="javascript:" class="title">体培招生</a>
+            <div class="other-box"></div>
+            <div class="info" v-for="item in teach">
+              <div class="name">{{ item }}</div>
+            </div>
           </div>
-        </div>
-        <div class="item">
-          <a href="javascript:" class="title">订场缴费</a>
-          <div class="other-box"></div>
-          <div class="info" v-for="item in venue">
-            <div class="name">{{ item }}</div>
+          <div class="item">
+            <a href="javascript:" class="title">订场缴费</a>
+            <div class="other-box"></div>
+            <div class="info" v-for="item in venue">
+              <div class="name">{{ item }}</div>
+            </div>
           </div>
-        </div>
-        <div class="item">
-          <a href="javascript:" class="title">协会运营</a>
-          <div class="other-box"></div>
-          <div class="info" v-for="item in org">
-            <div class="name">{{ item }}</div>
+          <div class="item">
+            <a href="javascript:" class="title">协会运营</a>
+            <div class="other-box"></div>
+            <div class="info" v-for="item in org">
+              <div class="name">{{ item }}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -176,9 +178,6 @@ function closeProduct() {
     width: 100%;
     min-height: 260px;
     background-color: #fff;
-    position: absolute;
-    top: 80px;
-    z-index: 100;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -191,31 +190,35 @@ function closeProduct() {
       .item {
         width: 150px;
         margin-right: 15px;
+        .title {
+          display: block;
+          height: 40px;
+          color: #333333;
+          text-decoration: none;
+        }
+        .other-box {
+          border-top: 1px #EBEEF5 solid;
+          width: 100px;
+          height: 20px;
+        }
+        .info {
+          height: 17px;
+          color: #666;
+          font-size: 12px;
+          margin-bottom: 10px;
+          .name {
+            font-size: 12px;
+          }
+        }
       }
     }
   }
   .product {
+    width: 100%;
     display: none;
-    .title {
-      display: block;
-      height: 40px;
-      color: #333333;
-      text-decoration: none;
-    }
-    .other-box {
-      border-top: 1px #EBEEF5 solid;
-      width: 100px;
-      height: 20px;
-    }
-    .info {
-      height: 17px;
-      color: #666;
-      font-size: 12px;
-      margin-bottom: 10px;
-      .name {
-        font-size: 12px;
-      }
-    }
+    position: absolute;
+    top: 80px;
+    z-index: 1;
   }
 }
 </style>
