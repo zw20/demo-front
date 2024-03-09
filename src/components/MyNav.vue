@@ -14,6 +14,24 @@ onMounted(() => {
     })
   })
 })
+
+const match = ref(['赛事报名', '赛事检录', '积分排名', '数据统计', '赛事公告', '赛事视频', '停赛通知', '嵌入公众号'])
+const club = ref(['活动报名', '人员管理', '队费缴纳', '战术安排', '数据统计', '相册&视频', 'VIP俱乐部'])
+const live = ref(['高清视频', '多机位直播', '标准直播', '赛事宣传片', '俱乐部Vlog'])
+const insure = ref(['运动意外伤害险', '场馆责任险', '赛事责任险', '教练责任险'])
+const teach = ref(['校区&师资&学员管理', '营销获客', '即将发布', '缴费收款', '点名考勤', '排课通知', '家校互动'])
+const venue = ref(['预定排场', '缴费收款', '长包设置', '临时锁场', '嵌入微信', '会员管理', '财务分析'])
+const org = ref(['会员管理', '缴费收款', '考核培训', '赛事运营', '品牌展示'])
+
+const product = ref()
+function showProduct() {
+  activeIndex.value = 0
+  product.value.style.display = 'block'
+}
+function closeProduct() {
+  activeIndex.value = -1
+  product.value.style.display = 'none'
+}
 </script>
 
 <template>
@@ -23,7 +41,7 @@ onMounted(() => {
         <img class="logo" src="../assets/my_nav/logo.png" alt="Logo">
         <img class="qw" src="../assets/my_nav/qw.png" alt="QW">
         <div class="tabs">
-          <div class="tab" :class="activeIndex === 0 ? 'action' : ''">产品系列</div>
+          <div class="tab" :class="activeIndex === 0 ? 'action' : ''" @mouseenter="showProduct" @mouseleave="closeProduct">产品系列</div>
           <div class="bor mar-left"></div>
           <div class="tab mar-left" :class="activeIndex === 1 ? 'action' : ''">解决方案</div>
           <div class="bor mar-left"></div>
@@ -32,7 +50,58 @@ onMounted(() => {
       </div>
       <button class="btn">联系我们</button>
     </div>
-    <div class="product">
+    <div class="popup-box product" ref="product" @mouseenter="showProduct" @mouseleave="closeProduct">
+      <div class="item-box">
+        <div class="item">
+          <a href="javascript:" class="title">办赛组织</a>
+          <div class="other-box"></div>
+          <div class="info" v-for="item in match">
+            <div class="name">{{ item }}</div>
+          </div>
+        </div>
+        <div class="item">
+          <a href="javascript:" class="title">俱乐部管理</a>
+          <div class="other-box"></div>
+          <div class="info" v-for="item in club">
+            <div class="name">{{ item }}</div>
+          </div>
+        </div>
+        <div class="item">
+          <a href="javascript:" class="title">直播集锦</a>
+          <div class="other-box"></div>
+          <div class="info" v-for="item in live">
+            <div class="name">{{ item }}</div>
+          </div>
+        </div>
+        <div class="item">
+          <a href="javascript:" class="title">保险保障</a>
+          <div class="other-box"></div>
+          <div class="info" v-for="item in insure">
+            <div class="name">{{ item }}</div>
+          </div>
+        </div>
+        <div class="item">
+          <a href="javascript:" class="title">体培招生</a>
+          <div class="other-box"></div>
+          <div class="info" v-for="item in teach">
+            <div class="name">{{ item }}</div>
+          </div>
+        </div>
+        <div class="item">
+          <a href="javascript:" class="title">订场缴费</a>
+          <div class="other-box"></div>
+          <div class="info" v-for="item in venue">
+            <div class="name">{{ item }}</div>
+          </div>
+        </div>
+        <div class="item">
+          <a href="javascript:" class="title">协会运营</a>
+          <div class="other-box"></div>
+          <div class="info" v-for="item in org">
+            <div class="name">{{ item }}</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -74,6 +143,9 @@ onMounted(() => {
           position: relative;
           font-size: 14px;
           color: #666666;
+          height: 80px;
+          display: flex;
+          align-items: center;
         }
         .action {
           font-weight: 700;
@@ -97,6 +169,52 @@ onMounted(() => {
       background: #191919;
       border-radius: 2px;
       border: 1px solid #000;
+      cursor: pointer;
+    }
+  }
+  .popup-box {
+    width: 100%;
+    min-height: 260px;
+    background-color: #fff;
+    position: absolute;
+    top: 80px;
+    z-index: 100;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    .item-box {
+      min-width: 1220px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-start;
+      padding: 32px 36px;
+      .item {
+        width: 150px;
+        margin-right: 15px;
+      }
+    }
+  }
+  .product {
+    display: none;
+    .title {
+      display: block;
+      height: 40px;
+      color: #333333;
+      text-decoration: none;
+    }
+    .other-box {
+      border-top: 1px #EBEEF5 solid;
+      width: 100px;
+      height: 20px;
+    }
+    .info {
+      height: 17px;
+      color: #666;
+      font-size: 12px;
+      margin-bottom: 10px;
+      .name {
+        font-size: 12px;
+      }
     }
   }
 }
