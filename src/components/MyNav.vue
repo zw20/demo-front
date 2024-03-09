@@ -24,6 +24,7 @@ const venue = ref(['预定排场', '缴费收款', '长包设置', '临时锁场
 const org = ref(['会员管理', '缴费收款', '考核培训', '赛事运营', '品牌展示'])
 
 const product = ref()
+const programmatic = ref()
 function showProduct() {
   activeIndex.value = 0
   product.value.style.display = 'block'
@@ -31,6 +32,14 @@ function showProduct() {
 function closeProduct() {
   activeIndex.value = -1
   product.value.style.display = 'none'
+}
+function showProgrammatic() {
+  activeIndex.value = 1
+  programmatic.value.style.display = 'block'
+}
+function closeProgrammatic() {
+  activeIndex.value = 1
+  programmatic.value.style.display = 'none'
 }
 </script>
 
@@ -43,7 +52,7 @@ function closeProduct() {
         <div class="tabs">
           <div class="tab" :class="activeIndex === 0 ? 'action' : ''" @mouseenter="showProduct" @mouseleave="closeProduct">产品系列</div>
           <div class="bor mar-left"></div>
-          <div class="tab mar-left" :class="activeIndex === 1 ? 'action' : ''">解决方案</div>
+          <div class="tab mar-left" :class="activeIndex === 1 ? 'action' : ''" @mouseenter="showProgrammatic" @mouseleave="closeProgrammatic">解决方案</div>
           <div class="bor mar-left"></div>
           <div class="tab mar-left" style="cursor: pointer" :class="activeIndex === 2 ? 'action' : ''">客户案例</div>
         </div>
@@ -52,7 +61,7 @@ function closeProduct() {
     </div>
     <div class="product" ref="product">
       <div class="popup-box" @mouseenter="showProduct" @mouseleave="closeProduct">
-        <div class="item-box">
+        <div class="item-box box1">
           <div class="item">
             <a href="javascript:" class="title">办赛组织</a>
             <div class="other-box"></div>
@@ -100,6 +109,48 @@ function closeProduct() {
             <div class="other-box"></div>
             <div class="info" v-for="item in org">
               <div class="name">{{ item }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="programmatic" ref="programmatic">
+      <div class="popup-box" @mouseenter="showProgrammatic" @mouseleave="closeProgrammatic">
+        <div class="item-box box2">
+          <div class="item">
+            <a href="javascript:" class="title">赛事运营</a>
+            <div class="other-box"></div>
+            <img class="img" src="../assets/my_nav/match.png" alt="">
+            <div class="description">
+              <div class="min-title">赛事通</div>
+              <div class="detail">提供赛事运营全站一体化解决方案</div>
+            </div>
+          </div>
+          <div class="item">
+            <a href="javascript:" class="title">体育培训</a>
+            <div class="other-box"></div>
+            <img class="img" src="../assets/my_nav/match.png" alt="">
+            <div class="description">
+              <div class="min-title">邦教练</div>
+              <div class="detail">招生排课好方便 青训就用邦教练</div>
+            </div>
+          </div>
+          <div class="item">
+            <a href="javascript:" class="title">场馆运营</a>
+            <div class="other-box"></div>
+            <img class="img" src="../assets/my_nav/match.png" alt="">
+            <div class="description">
+              <div class="min-title">智慧场馆</div>
+              <div class="detail">搭建私域 球队维护 赛事安排 场馆直播</div>
+            </div>
+          </div>
+          <div class="item">
+            <a href="javascript:" class="title">协会管理</a>
+            <div class="other-box"></div>
+            <img class="img" src="../assets/my_nav/match.png" alt="">
+            <div class="description">
+              <div class="min-title">体协+</div>
+              <div class="detail">会员注册 会费管理 裁判管理 检录核销</div>
             </div>
           </div>
         </div>
@@ -181,12 +232,17 @@ function closeProduct() {
     cursor: pointer;
     display: flex;
     justify-content: center;
+    .box1 {
+      padding: 32px 36px;
+    }
+    .box2 {
+      padding: 30px 242px;
+    }
     .item-box {
       min-width: 1220px;
       box-sizing: border-box;
       display: flex;
       justify-content: flex-start;
-      padding: 32px 36px;
       .item {
         width: 150px;
         margin-right: 15px;
@@ -210,10 +266,31 @@ function closeProduct() {
             font-size: 12px;
           }
         }
+        .img {
+          width: 65px;
+          height: 80px;
+        }
+        .description {
+          width: 100px;
+          .min-title {
+            font-size: 14px;
+            color: #191919;
+          }
+          .detail {
+           font-size: 12px;
+          }
+        }
       }
     }
   }
   .product {
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 80px;
+    z-index: 1;
+  }
+  .programmatic {
     width: 100%;
     display: none;
     position: absolute;
