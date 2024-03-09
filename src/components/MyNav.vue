@@ -8,7 +8,7 @@ onMounted(() => {
       activeIndex.value = index
     })
   })
-  tabs.forEach((tab, index) => {
+  tabs.forEach(tab => {
     tab.addEventListener('mouseleave', () => {
       activeIndex.value = -1
     })
