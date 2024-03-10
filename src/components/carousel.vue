@@ -41,7 +41,6 @@ const images = ref([
 <style lang="scss" scoped>
 .carousel {
   min-width: 1220px;
-  padding-top: 80px;
   .img-box {
     min-width: 100%;
     height: 444px;
