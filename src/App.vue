@@ -8,6 +8,7 @@ import Carousel from "@/components/carousel.vue";
     <my-nav />
     <div style="height: 80px;"></div>
     <carousel />
+    <div style="height: 350px; background-color:#FFFFFF;"></div>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 body {
   min-height: 100vh;
   color: #333333;
-  background: #8c8c8c;
+  background: #f9fafc;
   transition:
     color 0.5s,
     background-color 0.5s;
