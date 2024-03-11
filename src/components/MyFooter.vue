@@ -9,19 +9,19 @@
       <div class="description">合作体育机构</div>
     </div>
     <div class="box">
-      <div class="num">150 + 万</div>
+      <div class="num">150 +万</div>
       <div class="description">累计运营比赛场次</div>
     </div>
     <div class="box">
-      <div class="num">1.2 + 万</div>
+      <div class="num">1.2 +万</div>
       <div class="description">年度直播场次</div>
     </div>
     <div class="box">
-      <div class="num">30 + 万</div>
+      <div class="num">30 +万</div>
       <div class="description">累计保险服务人次</div>
     </div>
     <div class="box">
-      <div class="num">20 + 万</div>
+      <div class="num">20 +万</div>
       <div class="description">月度活跃赛事参与用户</div>
     </div>
   </div>
