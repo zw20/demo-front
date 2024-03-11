@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import MyNav from "@/components/MyNav.vue";
-import Carousel from "@/components/carousel.vue";
+import Carousel from "@/components/Carousel.vue";
+import Actions from "@/components/Actions.vue"
+import MyFooter from "@/components/MyFooter.vue";
+import Guys from "@/components/Guys.vue";
 </script>
 
 <template>
@@ -8,7 +11,9 @@ import Carousel from "@/components/carousel.vue";
     <my-nav />
     <div style="height: 80px;"></div>
     <carousel />
-    <div style="height: 350px; background-color:#FFFFFF;"></div>
+    <actions />
+    <my-footer />
+    <guys />
   </div>
 </template>
 

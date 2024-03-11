@@ -24,10 +24,10 @@ const images = ref([
   }
 ])
 const bgImage = ref([
-  { image: new URL('@/assets/carousel/match-bg.png', import.meta.url).href, title: '赛事通', detail: '提供赛事运营全站一体化解决方案'},
-  { image: new URL('@/assets/carousel/teach-bg.png', import.meta.url).href, title: '邦教练', detail: '招生排课好方便 青训就用邦教练'},
-  { image: new URL('@/assets/carousel/venue-bg.png', import.meta.url).href, title: '智慧场馆', detail: '搭建私域 球队维护 赛事安排 场馆直播'},
-  { image: new URL('@/assets/carousel/org-bg.png', import.meta.url).href, title: '体协+', detail: '会员注册 会费管理 裁判管理 检录核销'}
+  { image: new URL('@/assets/carousel/match-bg.png', import.meta.url).href, title: '赛事通', detail: '提供赛事运营全站一体化解决方案' },
+  { image: new URL('@/assets/carousel/teach-bg.png', import.meta.url).href, title: '邦教练', detail: '招生排课好方便 青训就用邦教练' },
+  { image: new URL('@/assets/carousel/venue-bg.png', import.meta.url).href, title: '智慧场馆', detail: '搭建私域 球队维护 赛事安排 场馆直播' },
+  { image: new URL('@/assets/carousel/org-bg.png', import.meta.url).href, title: '体协+', detail: '会员注册 会费管理 裁判管理 检录核销' }
 ])
 </script>
 
